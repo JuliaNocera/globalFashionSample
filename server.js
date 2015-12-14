@@ -12,5 +12,5 @@ server.listen(port, function() {
 	console.log('Running on port: ', port);
 });
 
-var staticPath = path.join(__dirname, 'app');
+var staticPath = path.join(__dirname, 'client');
 app.use(express.static(staticPath));
