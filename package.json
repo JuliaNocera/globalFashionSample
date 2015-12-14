@@ -1,0 +1,28 @@
+{
+  "name": "SampleFashionAppGlobality",
+  "version": "0.0.1",
+  "description": "A sample app for Globality hiring process",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JuliaNocera/globalFashionSample"
+  },
+  "author": "",
+  "license": "MIT",
+  "homepage": "https://github.com/JuliaNocera/globalFashionSample",
+  "dependencies": {
+    "bower": "^1.6.2",
+    "express": "^4.13.3",
+    "lodash": "^3.10.1"
+  },
+  "engines": {
+    "node": "0.12.7"
+  },
+  "cacheDirectories": [
+    "node_modules",
+    "client/lib"
+  ]
+}
