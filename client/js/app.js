@@ -2,7 +2,8 @@
 
 angular.module('fashionGlobalApp', [
 	'ngRoute',
-	'fashionGlobalApp.controllers'
+	'fashionControllers', 
+	'itemsService'
 	])
 
 .config(function ($routeProvider, $locationProvider) {
