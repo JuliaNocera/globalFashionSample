@@ -20,7 +20,7 @@ to run locally :
 
 `cd globalFashionSample` && `npm install `
 
-You are ready to run it! 
+- You are ready to run it! 
 
-type `node server.js` in your command line and open your browser to http://localhost:8100/ 
+Type `node server.js` in your command line and open your browser to http://localhost:8100/ 
 
