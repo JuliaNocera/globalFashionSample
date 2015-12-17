@@ -1,11 +1,13 @@
-'use strict';
 
+// load modules into app
 angular.module('fashionGlobalApp', [
 	'ngRoute',
 	'fashionControllers', 
-	'itemsService'
+	'itemsService',
+	'infinite-scroll'
 	])
 
+// routes
 .config(function ($routeProvider, $locationProvider) {
 	$routeProvider
 
@@ -15,7 +17,7 @@ angular.module('fashionGlobalApp', [
 	})
 
 	.otherwise({
-		redirectoTo: '/view1'
+		redirectoTo: '/'
 	});
 
 	$locationProvider.html5Mode({

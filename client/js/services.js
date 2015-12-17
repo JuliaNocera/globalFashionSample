@@ -1,3 +1,5 @@
+
+// API request setup
 var itemsService = angular.module('itemsService', ['ngResource']);
 
 

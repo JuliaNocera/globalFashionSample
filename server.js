@@ -20,8 +20,9 @@ var port = process.env.PORT || 8100;
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://heroku_n2bzq406:e48g19qkl7fets384rijht8sq2@ds033175.mongolab.com:33175/heroku_n2bzq406'); // connect to our database
 
-// pulls in schema 
+// fashion db schema 
 var Fashion = require('./models/fashion');
+
 
 // ROUTES FOR API
 // =============================================================================
@@ -38,12 +39,12 @@ router.get('/', function(req, res) {
     res.json({ message: 'api is working!' });   
 });
 
-// more routes for our API will :
+// more routes for our API :
 
 router.route('/fashion')
 
 	// create an item (accessed at POST http://localhost:8100/api/fashion) 
-  // not needed in this sample application, but could easily be implemented on the front end
+  // not needed in this sample application, but could easily be implemented on the front end to add user's own item
 	.post(function(req, res) {
 	    
     var fashion = new Fashion();      // create a new instance of the Fashion model
@@ -55,8 +56,9 @@ router.route('/fashion')
     
     // save the item and check for errors
     fashion.save(function(err) {
-      if (err)
+      if (err) {
           res.send(err);
+      }
 
       res.json({ message: 'Fashion item created!' });
     });
@@ -66,16 +68,18 @@ router.route('/fashion')
   // get the items in db (accessed at GET http://localhost:8100/api/fashion)
 	.get(function(req, res) {
     Fashion.find(function(err, item) {
-      if (err)
+      if (err) {
         res.send(err);
+      }
 
       res.json(item);
     });
 	})
 
 
-//route for individual item 
-// not needed in this sample application, but could be desired in a production application 
+// route for individual item 
+// not needed in this sample application
+// but could be desired in a production application 
 router.route('/fashion/:item_id')
 
   // get an individual item (accessed at GET http://localhost:8100/api/fashion/:item_id)
@@ -134,6 +138,7 @@ server.listen(port, function() {
 	console.log('Running on port: ', port);
 });
 
+// serve files in client
 var staticPath = path.join(__dirname, 'client');
 app.use(express.static(staticPath));
 
