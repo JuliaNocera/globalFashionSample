@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="content">
 
 	<h1> {{hello}} </h1>
@@ -14,3 +15,32 @@
 	</div>
 
 </div>
+=======
+ <div id="contentBoxApp top" >   
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner" >
+        <a class="brand" ng-click="gotoTop()">FashionLy</a>
+        <p class="navbar-text pull-right">Created by <a href="https://github.com/JuliaNocera" target="_blank" class="navbar-link">Julia Nocera</a></p>
+      </div>
+    </div>
+
+    <h2>Sample Pintrest Inspired Fashion App</h2>
+    <h3>By Julia Nocera</h3>
+
+    <div class="container dynamic-grid" infinite-scroll="loadMore()" infinite-scroll-disabled="busy" infinite-scroll-distance="3">
+      <article class="grid-item content-box" ng-repeat="item in items | limitTo:limit">
+        <div class="inner">
+        <img class="content-box-thumb" ng-src="{{item.thumbnail_url}}" alt="item image" />
+        <h1 class="content-box-header">
+          {{item.title}}
+        </h1>
+        <p class="content-box-blurb">
+          {{item.blurb}}
+        </p>
+        <a class="readmore-link" href="{{item.details_url}}" target="_blank">read more</a>
+        </div>
+      </article><!-- .content-box -->
+    </div><!-- .dynamic-grid -->
+</div><!-- contentBoxApp -->
+>>>>>>> adds all styling to app and infinite-scrolling capability
